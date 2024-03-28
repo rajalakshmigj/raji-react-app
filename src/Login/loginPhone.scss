@@ -1,0 +1,11 @@
+.PhoneInputInput{
+    background: transparent;
+    padding: 10px;
+    border: none;
+    // border-bottom: 1px solid gray;
+}
+
+.PhoneInputInput:focus{
+    border: blue;
+    outline: none;
+}
