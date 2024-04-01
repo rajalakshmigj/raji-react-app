@@ -9,7 +9,7 @@ import CrudReal from './realtimedb/crudReal'
 import { auth } from './firebase';
 import Resetpswd from './Login/passwordReset'
 import LoginPhone from './Login/loginPhone'
-import UploadImg from './component/UploadImg'
+import UploadImg from './storage/UploadImg'
 
 
 

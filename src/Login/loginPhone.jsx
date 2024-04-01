@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { signInWithPhoneNumber, getAuth, signInWithCredential, RecaptchaVerifier, PhoneAuthProvider } from 'firebase/auth';
 import { useNavigate, Navigate } from 'react-router-dom';
 import PhoneInput from 'react-phone-number-input'
@@ -49,12 +50,17 @@ const LoginPhone = () => {
 
   return (
     <div>
-      <div>
-        <Header />
+      <div className='flex justify-end px-32 py-7 sm:px-0'>
+        <Link to='/login'><button
+          className='border border-blue-600 hover:rounded-lg hover:border hover:border-blue-500 p-2 hover:bg-blue-500 hover:text-white rounded-full mx-2'
+        >
+          Back To Login
+        </button>
+        </Link>
       </div>
-      <div className='flex flex-col items-center justify-center m-auto my-10 '>
+      <div className='flex flex-col items-center justify-center my-10 '>
         {userLoggedIn && (<Navigate to={'/home'} replace={true} />)}
-        <div className='m-16 bg-slate-200 border border-slate-400 rounded-md p-8 shadow-lg backdrop-filter backdrop-blur-sm bg-opacity-30 relative'>
+        <div className='m-16  bg-slate-200 border border-slate-400 rounded-md p-8 sm:p-4 shadow-lg backdrop-filter backdrop-blur-sm bg-opacity-30 relative'>
           <h1 className='text-4xl font-bold text-center mb-6'>Login</h1>
 
           <PhoneInput

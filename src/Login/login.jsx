@@ -46,13 +46,13 @@ const Login = () => {
         }
     }
     return (
-        <div>
-            <div>
+        <div className='flex items-center justify-center my-5'>
+            {/* <div>
                 <Header />
-            </div>
-            <div className='flex items-center justify-center m-auto my-5'>
+            </div> */}
+            {/* <div className='flex items-center justify-center mx-8 my-5'> */}
                 {userLoggedIn && (<Navigate to={'/home'} replace={true} />)}
-                <div className='m-16 bg-slate-200 border border-slate-400 rounded-md p-8 shadow-lg backdrop-filter backdrop-blur-sm bg-opacity-30 relative'>
+                <div className='lg:my-16 mx-8  bg-slate-200 border border-slate-400 rounded-md p-8 shadow-lg backdrop-filter backdrop-blur-sm bg-opacity-30 relative'>
                     <h1 className='text-4xl font-bold text-center mb-6'>Login</h1>
                     <form action=''
                         onSubmit={handleSubmit}
@@ -63,7 +63,7 @@ const Login = () => {
                                 // required
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
-                                className='block w-72 py-2.3 px-0 text-sm  bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:focus:border-blue-500 focus:outline-none focus:ring-0  focus:border-blue-600 peer' placeholder='' />
+                                className='block lg:w-72 md:w-72 sm:w-64 py-2.3 px-0 text-sm  bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:focus:border-blue-500 focus:outline-none focus:ring-0  focus:border-blue-600 peer' placeholder='' />
                             <label htmlFor='' className='absolute top-32 text-sm duration-300 transform -translate-y-6 scale-75  -z-10 origin-[0] peer-focus:top-32 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-fous:left-0 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6'>Your Email</label>
 
                         </div>
@@ -73,7 +73,7 @@ const Login = () => {
                                 // required
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
-                                className='block w-72 py-2.3 px-0 text-sm  bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:focus:border-blue-500 focus:outline-none focus:ring-0  focus:border-blue-600 peer' placeholder='' />
+                                className='block lg:w-72 md:w-72 sm:w-64 py-2.3 px-0 text-sm  bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:focus:border-blue-500 focus:outline-none focus:ring-0  focus:border-blue-600 peer' placeholder='' />
                             <label htmlFor='' className='absolute text-sm duration-300 transform -translate-y-6 scale-75 -z-10 origin-[0] peer-focus:top-52 top-52 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-fous:left-0 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6'>Your Password</label>
 
                         </div>
@@ -81,13 +81,13 @@ const Login = () => {
                             <span className='text-red-600 font-bold w-72 block'>{errorMessage}</span>
                         )}
 
-                        <div className='flex justify-between items-center '>
-                            <div className='flex gap-2 items-center my-4'>
+                        <div className='lg:flex justify-between items-center sm:text-center md:text-center'>
+                            <div className='flex gap-2  items-center my-4'>
                                 <input type='checkbox' name='rememberMe' id='rememberMe' checked={rememberMe} onChange={() => setRememberMe(!rememberMe)} />
                                 <label htmlFor='Remember Me'>Remember Me?</label>
                             </div>
                             <button>
-                                <Link to='/pswdreset' className='text-blue-500'>
+                                <Link to='/pswdreset' className='text-blue-500 '>
                                     Forgot Password?
                                 </Link>
                             </button>
@@ -109,7 +109,7 @@ const Login = () => {
                     </form>
                 </div>
 
-            </div>
+            {/* </div> */}
         </div>
     )
 }

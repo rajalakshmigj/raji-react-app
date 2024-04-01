@@ -86,11 +86,11 @@ const CrudReal = () => {
 
     return (
         <div>
-            <div className='flex justify-end px-32 py-7'>
+            <div className='flex justify-end px-32 py-7 sm:px-0'>
                 <Link to='/home'><button
                 className='border border-blue-600 hover:rounded-lg hover:border hover:border-blue-500 p-2 hover:bg-blue-500 hover:text-white rounded-full mx-2'
                 >
-                    Home
+                    Back To Home
                 </button>
                 </Link>
 
@@ -98,9 +98,9 @@ const CrudReal = () => {
 
             <div className='m-10'>
 
-                <h1 className='text-center m-2 text-red-300 text-2xl font-bold'>Hello, you are now logged in.</h1>
+            <h1 className='text-center m-2 text-red-400 text-2xl font-bold fadeInUp animated animatedFadeInUp '>Hey! Welcome to Firebase Realtime Database.</h1>
 
-                <div className={`flex mx-auto items-center mt-16 mb-4 justify-center`}>
+                <div className={`lg:flex lg:flex-row mx-auto items-center mt-16 mb-4 justify-center sm:flex sm:flex-col`}>
 
                     <div>
                         <label className='font-bold'>Enter Todo: </label>
@@ -126,7 +126,7 @@ const CrudReal = () => {
                             <tr className='border border-neutral-300'>
                                 <td className='border border-neutral-300 p-2 font-bold'>Todo</td>
                                 <td className='border border-neutral-300 p-2 font-bold'>Todo Time</td>
-                                <td className='border border-neutral-300 p-2 font-bold'>Firebase Id</td>
+                                <td className='border border-neutral-300 p-2 font-bold hidden'>Firebase Id</td>
                                 <td className='border border-neutral-300 p-2 font-bold'>Action</td>
                             </tr>
                         </thead>
@@ -136,7 +136,7 @@ const CrudReal = () => {
                                     <tr key={index} className='border border-neutral-300'>
                                         <td className='border border-neutral-300 p-2'> {item.fruitName} </td>
                                         <td className='border border-neutral-300 p-2'> {item.fruiteDef} </td>
-                                        <td className='border border-neutral-300 p-2'> {item.fruitId} </td>
+                                        <td className='border border-neutral-300 p-2 hidden'> {item.fruitId} </td>
                                         <td className='border border-neutral-300 p-2'>
                                             <button className={`bg-indigo-100 m-2 p-2 px-6 text-zinc-700 rounded-full`} onClick={() => handleEdit(item.fruitId)}>Edit</button>
                                             <button className={`bg-indigo-100  m-2 p-2 px-6 text-zinc-700 rounded-full`} onClick={() => deleteFruit(item.fruitId)}>Delete</button>

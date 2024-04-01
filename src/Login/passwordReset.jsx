@@ -29,15 +29,15 @@ const PasswordRest = () => {
 
   return (
 
-    <div className='my-24 flex flex-col justify-center items-center bg-white w-96 mx-auto p-5'>
-      <h1 className='my-2 text-blue-500 font-semibold text-3xl'>Reset Your Password</h1>
-      <p className='my-2 font-medium text-black text-base'>Please enter your email address below. You will receive the link to reset your password</p>
+    <div className='my-24 flex flex-col justify-center items-center bg-white mx-auto p-5'>
+      <h1 className='my-2 text-blue-500 font-semibold text-3xl text-center'>Reset Your Password</h1>
+      <p className='my-2 font-medium text-black text-base text-center'>Please enter your email address below. You will receive the link to reset your password</p>
       <div className='relative '><svg className='absolute left-0 bottom-0 top-3'
         width="35px" height="35px" viewBox="-1.2 -1.2 26.40 26.40" xmlns="http://www.w3.org/2000/svg" fill="#000000" transform="rotate(0)matrix(1, 0, 0, 1, 0, 0)"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round" stroke="#CCCCCC" strokeWidth="0.72"></g><g id="SVGRepo_iconCarrier"><path d="M13.025 17H3.707l5.963-5.963L12 12.83l2.33-1.794 1.603 1.603a5.463 5.463 0 0 1 1.004-.41l-1.808-1.808L21 5.9v6.72a5.514 5.514 0 0 1 1 .64V5.5A1.504 1.504 0 0 0 20.5 4h-17A1.504 1.504 0 0 0 2 5.5v11A1.5 1.5 0 0 0 3.5 18h9.525c-.015-.165-.025-.331-.025-.5s.01-.335.025-.5zM3 16.293V5.901l5.871 4.52zM20.5 5c.009 0 .016.005.025.005L12 11.57 3.475 5.005c.009 0 .016-.005.025-.005zm-2 8a4.505 4.505 0 0 0-4.5 4.5 4.403 4.403 0 0 0 .05.5 4.49 4.49 0 0 0 4.45 4h.5v-1h-.5a3.495 3.495 0 0 1-3.45-3 3.455 3.455 0 0 1-.05-.5 3.498 3.498 0 0 1 5.947-2.5H20v.513A2.476 2.476 0 0 0 18.5 15a2.5 2.5 0 1 0 1.733 4.295A1.497 1.497 0 0 0 23 18.5v-1a4.555 4.555 0 0 0-4.5-4.5zm0 6a1.498 1.498 0 0 1-1.408-1 1.483 1.483 0 0 1-.092-.5 1.5 1.5 0 0 1 3 0 1.483 1.483 0 0 1-.092.5 1.498 1.498 0 0 1-1.408 1zm3.5-.5a.5.5 0 0 1-1 0v-3.447a3.639 3.639 0 0 1 1 2.447z"></path><path fill="none" d="M0 0h24v24H0z"></path></g></svg>
         <input type='email' required
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className='block w-72 my-2 py-2.5 px-10 text-sm  bg-transparent border border-gray-300 appearance-none dark:focus:border-blue-500 focus:outline-none focus:ring-0  focus:border-blue-600 peer' placeholder='Enter Your Email Address' />
+          className='block w-72 sm:w-60 my-2 py-2.5 px-10 text-sm  bg-transparent border border-gray-300 appearance-none dark:focus:border-blue-500 focus:outline-none focus:ring-0  focus:border-blue-600 peer' placeholder='Enter Your Email Address' />
       </div>
       <button onClick={handleResetPassword} disabled={resetSent} className='border border-blue-500 bg-blue-500 text-white font-semibold px-4 py-2.5 my-3' >
         {resetSent ? 'Reset Link Sent' : 'Reset Your Password'}

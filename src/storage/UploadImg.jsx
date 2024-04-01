@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 import { dbFire, storage } from '../firebase'
 // import { storage } from "../storage"
 import { v4 } from 'uuid'
 import { getDownloadURL, getMetadata, listAll, ref, uploadBytes, uploadBytesResumable, deleteObject } from 'firebase/storage'
 import { addDoc, getDocs, collection } from 'firebase/firestore'
 import Header from '../component/header'
-// import '../updatedata/uploadimg.scss'
+import '../storage/uploadimg.scss'
 
 const UploadImg = () => {
     const [img, setImg] = useState('')
@@ -105,14 +106,20 @@ const UploadImg = () => {
 
     return (
         <div>
-            <div>
-                <Header />
+           <div className='flex justify-end px-32 py-7 sm:px-0'>
+                <Link to='/home'><button
+                className='border border-blue-600 hover:rounded-lg hover:border hover:border-blue-500 p-2 hover:bg-blue-500 hover:text-white rounded-full mx-2'
+                >
+                    Back To Home
+                </button>
+                </Link>
+
             </div>
             <div className='flex flex-col justify-center items-center m-2'>
 
 
                 <div>
-                    <h5 className='text-blue-800 font-bold mt-4 text-lg'>"Select a file to upload it to Firebase Storage. Download it anytime, or delete it with a click of a button!"</h5>    {/* <Header /> */}
+                    <h5 className='text-blue-800 font-bold mt-4 text-lg sm:text-center'>"Select a file to upload it to Firebase Storage. Download it anytime, or delete it with a click of a button!"</h5>    {/* <Header /> */}
                 </div>
                 <div className='flex justify-center flex-col items-center m-10'>
 
