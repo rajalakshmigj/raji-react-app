@@ -29,7 +29,7 @@ const PasswordRest = () => {
 
   return (
 
-    <div className='my-24 flex flex-col justify-center items-center bg-white mx-auto p-5'>
+    <div className='my-24 flex flex-col justify-center items-center bg-white mx-auto p-5 '>
       <h1 className='my-2 text-blue-500 font-semibold text-3xl text-center'>Reset Your Password</h1>
       <p className='my-2 font-medium text-black text-base text-center'>Please enter your email address below. You will receive the link to reset your password</p>
       <div className='relative '><svg className='absolute left-0 bottom-0 top-3'

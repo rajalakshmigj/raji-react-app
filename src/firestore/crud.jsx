@@ -136,7 +136,7 @@ const Crud = () => {
                             fetchData.map((data) => {
                                 return (
                                     <>
-                                        <div className='py-2.5 px-5 mt-5 ml-4 mb-2 h-52 screen-xs:h-60 bg-white rounded-md'>
+                                        <div className='py-2.5 px-5 mt-5 ml-4 mb-2  h-52 screen-xs:h-60 bg-white rounded-md'>
                                             <h3 className='mt-3 text-base text-black'>Name : {data.Name}</h3>
                                             <h3 className='mt-3 text-base text-black'>E-mail : {data.Email} </h3>
                                             <h3 className='mt-3 text-base text-black'>Phone : {data.Phone} </h3>

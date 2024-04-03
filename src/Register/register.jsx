@@ -23,15 +23,15 @@ const Register = () => {
     };
 
     return (
-        <div className='flex items-center justify-cente my-2'>
+        <div className='flex items-center justify-center my-8'>
             {/* <div>
                 <Header />
             </div> */}
             {/* <div className='flex items-center justify-cente my-2'> */}
             {userLoggedIn && (<Navigate to={'/home'} replace={true} />)}
 
-            <div className='lg:my-16 mx-8 bg-slate-200 border border-slate-400 rounded-md p-8 shadow-lg backdrop-filter backdrop-blur-sm bg-opacity-30 relative mx-auto my-20'>
-                <h1 className='text-4xl font-bold text-center mb-6'>Register</h1>
+            <div className='lg:my-16 mx-8 bg-slate-200 border border-slate-400 rounded-md p-8 shadow-lg backdrop-filter backdrop-blur-sm bg-opacity-30 relative my-20'>
+                <h1 className='text-4xl  font-bold text-center mb-6'>Register</h1>
                 <form action=''
                     onSubmit={handleSubmit}
                 >
@@ -39,7 +39,7 @@ const Register = () => {
                         <input type='email'
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
-                            className='block w-72 pt-2 px-0 text-sm  bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:focus:border-blue-500 focus:outline-none focus:ring-0  focus:border-blue-600 peer' placeholder='' />
+                            className='block lg:w-72 md:w-72 sm:w-64 pt-2 px-0 text-sm  bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:focus:border-blue-500 focus:outline-none focus:ring-0  focus:border-blue-600 peer' placeholder='' />
                         <label htmlFor='' className='absolute top-32 text-sm duration-300 transform -translate-y-6 scale-75  -z-10 origin-[0] peer-focus:top-32 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-fous:left-0 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6'>Your Email</label>
 
                     </div>
@@ -47,7 +47,7 @@ const Register = () => {
                         <input type='password'
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
-                            className='block w-72 pt-2 px-0 text-sm  bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:focus:border-blue-500 focus:outline-none focus:ring-0  focus:border-blue-600 peer' placeholder='' />
+                            className='block lg:w-72 md:w-72 sm:w-64 .pt-2 px-0 text-sm  bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:focus:border-blue-500 focus:outline-none focus:ring-0  focus:border-blue-600 peer' placeholder='' />
                         <label htmlFor='' className='absolute text-sm duration-300 transform -translate-y-6 scale-75 -z-10 origin-[0] peer-focus:top-52 top-52 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-fous:left-0 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6'>Your Password</label>
 
                     </div>
@@ -55,7 +55,7 @@ const Register = () => {
                         <input type='password'
                             value={confirmPassword}
                             onChange={(e) => setConfirmPassword(e.target.value)}
-                            className='block w-72 pt-2 px-0 text-sm  bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:focus:border-blue-500 focus:outline-none focus:ring-0  focus:border-blue-600 peer' placeholder='' />
+                            className='block lg:w-72 md:w-72 sm:w-64 pt-2 px-0 text-sm  bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:focus:border-blue-500 focus:outline-none focus:ring-0  focus:border-blue-600 peer' placeholder='' />
                         <label htmlFor='' className='absolute text-sm duration-300 transform -translate-y-6 scale-75 -z-10 origin-[0] peer-focus:top-72 top-72 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-fous:left-0 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6'>Confirm Password</label>
 
                     </div>

@@ -86,7 +86,7 @@ const CrudReal = () => {
 
     return (
         <div>
-            <div className='flex justify-end px-32 py-7 sm:px-0'>
+            <div className='flex justify-end px-32 py-7 sm:px-0 '>
                 <Link to='/home'><button
                 className='border border-blue-600 hover:rounded-lg hover:border hover:border-blue-500 p-2 hover:bg-blue-500 hover:text-white rounded-full mx-2'
                 >
