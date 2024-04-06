@@ -43,7 +43,8 @@ const Crud = () => {
         const addData = await addDoc(dbref, { Name: name, Email: email, Phone: phone })
         if (addData) {
             alert("Data Added");
-            const newData = { Name: name, Email: email, Phone: phone };
+            setId(addData.id);
+            const newData = { Name: name, Email: email, Phone: phone, id: addData.id };
             setFetchData(prevData => [...prevData, newData]);
             setName('');
             setEmail('');
@@ -57,12 +58,12 @@ const Crud = () => {
     //fetching data from db
     const fetch = async () => {
         const snapshot = await getDocs(dbref)
-        const fetchData = snapshot.docs.map((doc => ({ ...doc.data(), id: doc.id })))
+        const fetchData = snapshot.docs.map(doc => ({ ...doc.data(), id: doc.id }))
         setFetchData(fetchData)
     }
     useEffect(() => {
-        fetch()
-    }, [])
+        fetch();
+    }, []);
 
     //pass update data to form
     const passData = async (id) => {
@@ -118,16 +119,18 @@ const Crud = () => {
                 <div className='bg-white py-5 px-7 my-0 mt-12 mx-auto w-80 shadow-xl'>
                     <h2 className='text-center text-black text-base font-semibold uppercase'>Add/ Update Form</h2>
                     <div className='w-full '>
-                        <input type='text' className='w-full py-2.5 px-0 border border-x-white border-t-white outline-none border-b-[#868686] text-black' placeholder='Full Name' autoComplete='Off' value={name} onChange={(e) => setName(e.target.value)} />
+                        <input type='text' className='w-full py-2.5 px-0 border border-x-white border-t-white outline-none border-b-[#868686] text-black placeholder:text-xs placeholder:text-slate-400' placeholder='Full Name' autoComplete='Off' value={name} onChange={(e) => setName(e.target.value)} />
                     </div>
                     <div className='w-full '>
-                        <input type='email' className='w-full py-2.5 px-0 border border-x-white border-t-white outline-none border-b-[#868686] text-black' placeholder='E-mail' autoComplete='Off' value={email} onChange={(e) => setEmail(e.target.value)} />
+                        <input type='email' className='w-full py-2.5 px-0 border border-x-white border-t-white outline-none border-b-[#868686] text-black placeholder:text-xs placeholder:text-slate-400' placeholder='E-mail' autoComplete='Off' value={email} onChange={(e) => setEmail(e.target.value)} />
                     </div>
                     <div className='w-full '>
-                        <input type='text' className='w-full py-2.5 px-0 border border-x-white border-t-white outline-none border-b-[#868686] text-black ' placeholder='Phone Number' autoComplete='Off' value={phone} onChange={(e) => setPhone(e.target.value)} />
+                        <input type='text' className='w-full py-2.5 px-0 border border-x-white border-t-white outline-none border-b-[#868686] text-black placeholder:text-xs placeholder:text-slate-400' placeholder='Phone Number' autoComplete='Off' value={phone} onChange={(e) => setPhone(e.target.value)} />
                     </div>
-                    <button className='ml-5 px-7 py-3 border-none outline-none bg-blue-600 text-white mt-5 cursor-pointer' onClick={add}>Add</button>
-                    <button className='ml-5 px-7 py-3 border-none outline-none bg-blue-600 text-white mt-5 cursor-pointer' onClick={update}>Update</button>
+                    <div className='flex justify-center'>
+                        <button className=' px-5 py-2 border-none outline-none bg-blue-600 text-white m-4 cursor-pointer' onClick={add}>Add</button>
+                        <button className=' px-4 py-2 border-none outline-none bg-blue-600 text-white m-4 cursor-pointer' onClick={update}>Update</button>
+                    </div>
                 </div>
                 <div className='px-10 py-5 w-full'>
                     <h2 className='text-black text-lg uppercase font-semibold'>CRUD Database</h2>
@@ -136,13 +139,13 @@ const Crud = () => {
                             fetchData.map((data) => {
                                 return (
                                     <>
-                                        <div className='py-2.5 px-5 mt-5 ml-4 mb-2  h-52 screen-xs:h-60 bg-white rounded-md'>
+                                        <div className='py-2.5 px-5 mt-5 ml-4 mb-2  h-52 screen-xs:h-60 bg-white rounded-md shadow-md'>
                                             <h3 className='mt-3 text-base text-black'>Name : {data.Name}</h3>
                                             <h3 className='mt-3 text-base text-black'>E-mail : {data.Email} </h3>
                                             <h3 className='mt-3 text-base text-black'>Phone : {data.Phone} </h3>
-                                            <div>
-                                                <button className='mt-4 ml-5 px-5 py-2.5 bg-blue-500 text-white outline-none border-none cursor-pointer' onClick={() => passData(data.id)}>Update</button>
-                                                <button className='mt-4 ml-5 px-5 py-2.5 bg-blue-500 text-white outline-none border-none cursor-pointer' onClick={() => handleDelete(data.id)}>Delete</button>
+                                            <div className='flex justify-center'>
+                                                <button className='mt-4 ml-5 px-5 py-2.5 bg-emerald-500 text-white outline-none border-none cursor-pointer' onClick={() => passData(data.id)}>Update</button>
+                                                <button className='mt-4 ml-5 px-5 py-2.5 bg-red-500 text-white outline-none border-none cursor-pointer' onClick={() => handleDelete(data.id)}>Delete</button>
                                             </div>
                                         </div>
                                     </>

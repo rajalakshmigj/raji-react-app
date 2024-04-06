@@ -35,8 +35,8 @@ const Home = () => {
                 <div className='flex justify-end mx-4 '>
                     
 
-                    <button className={` flex  items-center  mb-4 text-md mt-6 rounded bg-white text-blue-500 uppercase py-2 transition-colors:duration-300 ${isSigningOut}`} type='submit' disabled={isSigningOut}>
-                    <svg className="h-8 w-8 text-blue-500 mx-1 "  width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" />  <path d="M7 12h14l-3 -3m0 6l3 -3" /></svg>
+                    <button className={` flex  items-center font-medium mb-4 text-sm mt-6 rounded bg-white text-blue-500 uppercase py-2 transition-colors:duration-300 ${isSigningOut}`} type='submit' disabled={isSigningOut}>
+                    <svg className="h-7 w-7 text-blue-500 mx-1 "  width="20" height="20" viewBox="0 0 20 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" />  <path d="M7 12h14l-3 -3m0 6l3 -3" /></svg>
                         
                         
                         {isSigningOut ? <Navigate to='/login' /> : 'Sign Out'}
